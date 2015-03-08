@@ -33,7 +33,7 @@ public class MainActivity extends ActionBarActivity {
             if(receivedString != null) {
                 outputText.append("\nID: " + receivedString);
             }
-            
+
         }
     };
 
@@ -46,6 +46,20 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void runTask(View v){
+
+        // VERSION 0
+        // Running a task on the UI Thread
+        Log.i(LOG_TAG, "Blocking Task Started");
+
+        try {
+            Thread.sleep(5000); // simulate a 5-second task
+
+            outputText.setText("Task Complete");
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        Log.i(LOG_TAG, "Blocking Task Finished");
 
         // VERSION 1
         // Update the TextView using a background Thread
@@ -117,7 +131,7 @@ public class MainActivity extends ActionBarActivity {
 //        Timer timer = new Timer();
 //        timer.schedule(new TimerTask(){
 //            public void run( ) {
-//                
+//
 //                Log.i(LOG_TAG, "TimerTask Started");
 //
 //                for (int i = 0; i < 5; i++){
@@ -136,7 +150,7 @@ public class MainActivity extends ActionBarActivity {
 
         // VERSION 4
         // Update the TextView using an AsyncTask
-        new MyAsyncTask().execute();   
+//        new MyAsyncTask().execute();   
         
     }    
     
