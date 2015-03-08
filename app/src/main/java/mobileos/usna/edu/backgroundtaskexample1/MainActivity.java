@@ -160,7 +160,7 @@ public class MainActivity extends ActionBarActivity {
 
             while(progress < 100){
                 try {
-                    Thread.sleep(100); //pause for 2 seconds
+                    Thread.sleep(100); //pause for 100 milliseconds
                     
                     // push updates to UI thread
                     publishProgress(progress);
