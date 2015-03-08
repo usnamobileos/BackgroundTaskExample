@@ -184,6 +184,7 @@ public class MainActivity extends ActionBarActivity {
             return someValue;
         }
 
+        @Override
         protected void onProgressUpdate(Integer... progress) {
             // update UI thread according to progress,
             // e.g. update a ProgressBar display
